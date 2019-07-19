@@ -1,0 +1,35 @@
+
+.sign_in{
+    display: none;
+    position: fixed;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.82);
+    z-index: 13000;
+    height: 100%;
+    
+    }
+    .sign-in-form{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255,255,255,0.78);
+    /*height: 55%;*/
+    /*width: 30%;*/
+    padding-top: 70px;
+    padding-right: 30px;
+    padding-left: 30px;
+    border: 2px solid black;
+    border-radius: 10px;
+    }
+    .signup_button{
+        background-color: white;
+        color: #3a78bd;
+        border-radius: 50px;
+        cursor: pointer;
+        outline: none;
+        border:2px solid #3a78bd;
+        font-weight: 700;
+       }

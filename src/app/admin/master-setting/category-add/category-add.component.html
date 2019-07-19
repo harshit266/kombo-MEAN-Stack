@@ -1,0 +1,42 @@
+<div class="col-sm-12 sign_in text-center margin-top-0" id="sign_in">
+        
+    <div class="col-sm-4 form-group padding-bottom-20 sign-in-form font-20" id="sign-in-form">
+       <div class="col-sm-12 cross text-right cursor-pointer margin-top-0 padding-right-33" id="cut">
+       <i class="far fa-times-circle text-right"></i>
+       </div>
+
+       <!-- <img class="width-60" src="images\horizontal2.png" alt=""> -->
+      <h3 class="margin-top-0">Sign-In</h3>
+       <input class="form-control sign-in-field border-color-black" type="text" name="username" placeholder="E-mail/Username"/>  <br>
+       <input class="form-control sign-in-field border-color-black" type="password" name="password" placeholder="Password"/>
+       <div class="col-sm-12 text-right padding-top-6 padding-right-0 margin-top-0 padding-top-0 font-14" id="otp-submit"><a class="forgot" href="#">Forgot Password</a></div>
+        <a href="#"><button class="signup_button" id="signin_button">Sign In</button></a>
+    </div>
+    <div class="form-group forgot-password" id="forgot-password">
+       <h5>Please Enter the OTP</h5>
+       <input class="form-control contact-form-2 border-color-black" type="text" name="username" placeholder="OTP"/>
+       <a href="#"><button class="signup_button margin-top-60" id="signin_button">Submit</button></a>
+    </div>
+ </div>      
+
+ <script type="text/javascript">
+    $('#sign-in-button').click(function(){
+    
+    $('#sign_in').fadeIn({queue: false, duration: 'slow'});
+
+
+})
+     $('.cross').click(function(){
+  
+    $('#sign_in').fadeOut({queue: false, duration: 'slow'});
+    
+
+})
+
+     $('#otp-submit').click(function(){
+$('#forgot-password').fadeIn({queue: false, duration: 'slow'});
+$('#sign-in-form').fadeOut( {queue: false, duration: 'slow'});
+$('#sign-in-form').animate({ 'left': "-700px" }, 'slow');
+
+})
+ </script>

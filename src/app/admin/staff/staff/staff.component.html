@@ -1,0 +1,107 @@
+<div class="app header-default side-nav-dark">
+    <div class="layout">
+    
+    <div class="page-container">
+    
+    <div class="main-content">
+    <div class="container-fluid">
+    
+    <div class="breadcrumb-wrapper row">
+    <div class="col-12 col-lg-3 col-md-6">
+    <h4 class="page-title">Staff Management</h4>
+    </div>
+    <div class="col-12 col-lg-9 col-md-6">
+    <ol class="breadcrumb float-right">
+    <li><a href="#"></a></li>
+    <li class="active"></li>
+    </ol>
+    </div>
+    </div>
+    
+    </div>
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-12">
+    <div class="card">
+    <div class="card-header border-bottom">
+    <h4 class="card-title">Staff Details</h4>
+    </div>
+    <div class="col-sm-12 text-right">
+    <button routerLink="/admin/staff-create" class="btn btn-success" >Add Staff</button>
+    </div>
+    <div class="card-body">
+    <div class="table-responsive">
+    <table id="datatable" class="table table-bordered table-striped "  [mfData]="user" #mf="mfDataTable" [mfRowsOnPage]="5">
+    <thead>
+    <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Number</th>
+    <th>Access Rights</th>
+    <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of user">
+            <td><mfDefaultSorter by="name">{{ user.name }}</mfDefaultSorter></td>
+            <td><mfDefaultSorter>{{ user.email }}</mfDefaultSorter></td>
+            <td><mfDefaultSorter>{{ user.number }}</mfDefaultSorter></td>
+            <td><mfDefaultSorter>All</mfDefaultSorter></td>
+           
+            <td>
+                <button routerLink="/admin/staff-view/{{user._id}}"class="btn btn-success">View</button>
+                <button routerLink="/admin/staff-edit/{{user._id}}"class="btn btn-success">Edit</button>
+                <!-- <button id="active" (click) ="$event.preventDefault();active(user._id , user.is_active); " class="btn btn-success">{{user.is_active}}</button> -->
+                <button  *ngIf="user.is_active" class="btn btn-success" (click)="active(user._id,user.is_active);" id="course_status_btn_{{user._id}}" >
+                    active
+                </button>
+                 <button  *ngIf="!user.is_active" class="btn btn-success" (click)="active(user._id,user.is_active);" id="course_status_btn_{{user._id}}" >
+                    Inactive
+                </button>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+    </div> 
+     </div> 
+   
+    </div>
+    
+    </div>
+    
+    </div>
+    </div>
+    
+    <!-- <div id="preloader">
+    <div class="loader" id="loader-1"></div>
+    </div> -->
+    
+    
+    <script src="../../../../assets/js/jquery-min.js"></script>
+    <script src="../../../../assets/js/popper.min.js"></script>
+    <script src="../../../../assets/js/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/jquery.app.js"></script>
+    <script src="../../../../assets/js/main.js"></script>
+    
+    <script src="../../../../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    
+    <script src="../../../../assets/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/jszip.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/pdfmake.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/vfs_fonts.js"></script>
+    <script src="../../../../assets/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/buttons.print.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/buttons.colVis.min.js"></script>
+    
+    <script src="../../../../assets/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/responsive.bootstrap4.min.js"></script>
+    
+    <script src="../../../../assets/js/datatables.init.js"></script>
+    
+    <!-- Mirrored from preview.uideck.com/items/inspire-pro/default/data-table.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jul 2019 08:55:27 GMT -->
+    </div>

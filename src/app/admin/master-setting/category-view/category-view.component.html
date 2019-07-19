@@ -1,0 +1,125 @@
+<div class="app header-default side-nav-dark">
+    <div class="layout">
+    
+    <div class="page-container">
+            <div class="col-sm-12 sign_in text-center margin-top-0 display" id="sign-in">
+        
+                    <div class="col-sm-4 form-group padding-bottom-20 sign-in-form font-20" id="sign-in-form">
+                       <div class="col-sm-12 text-right cursor-pointer margin-top-0 padding-right-33" id="cut">
+                        <i class="far fa-times-circle"></i>
+                         </div>
+                
+                       <!-- <img class="width-60" src="images\horizontal2.png" alt=""> -->
+                      <h3 class="margin-top-0">Add Category</h3>
+                      <form class="forms-sample data" #form="ngForm">
+                       <input class="form-control sign-in-field border-color-black" type="text" ngModel name="category" #category="ngModel" placeholder="Enter Category"/>  <br>
+                       <input class="form-control sign-in-field border-color-black" type="number" ngModel name="intrest_rate" #intrest_rate="ngModel" placeholder="Enter Intrest Rate (%)"/>
+                       <!-- <div class="col-sm-12 text-right padding-top-6 padding-right-0 margin-top-0 padding-top-0 font-14" id="otp-submit"><a class="forgot" href="#">Forgot Password</a></div> -->
+                    <button class="signup_button" (click)="addCategory(form)" id="submit">Submit</button>
+                    </form>
+                    </div>
+                 </div>      
+    
+    <div class="main-content" id="main">
+    <div class="container-fluid">
+    
+    <div class="breadcrumb-wrapper row">
+    <div class="col-12 col-lg-3 col-md-6">
+    <h4 class="page-title">Master Settings</h4>
+    </div>
+    <div class="col-12 col-lg-9 col-md-6">
+    <ol class="breadcrumb float-right">
+    <li><a href="#"></a></li>
+    <li class="active"></li>
+    </ol>
+    </div>
+    </div>
+    
+    </div>
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-12">
+    <div class="card">
+    <div class="card-header border-bottom">
+    <h4 class="card-title">Category Details</h4>
+    </div>
+    <div class="col-sm-12 text-right">
+    <!-- <button  mat-raised-button (click)="openModal()">Add Category</button> -->
+    <!-- <button routerLink="/admin/category-create" class="btn btn-success" >Add Category</button> -->
+    <!-- <button type="button" (click)="onDialog();" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add Category</button> -->
+    <button mat-raised-button  id="sign-in-button">Add Category</button>
+</div>
+    <div class="card-body">
+    <div class="table-responsive">
+    <table id="datatable" class="table table-bordered table-striped "  [mfData]="user" #mf="mfDataTable" [mfRowsOnPage]="5">
+    <thead>
+    <tr>
+    <th>Category</th>
+    <th>Intrest Rate</th>
+    <th>Added On</th>
+    <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of user">
+            <td><mfDefaultSorter by="name">{{ user.category }}</mfDefaultSorter></td>
+            <td><mfDefaultSorter>{{ user.intrest_rate }}</mfDefaultSorter></td>
+            <td><mfDefaultSorter>{{ user.createdAt }}</mfDefaultSorter></td>
+           
+            <td>
+                <button routerLink="/admin/category-edit/{{user._id}}"class="btn btn-success">Edit</button>
+                <button  *ngIf="user.is_active" class="btn btn-success" (click)="active(user._id,user.is_active);" id="course_status_btn_{{user._id}}" >
+                    active
+                </button>
+                 <button  *ngIf="!user.is_active" class="btn btn-success" (click)="active(user._id,user.is_active);" id="course_status_btn_{{user._id}}" >
+                    Inactive
+                </button>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+    </div> 
+     </div> 
+   
+    </div>
+    
+    </div>
+    
+    </div>
+    </div>
+    
+    <!-- <div id="preloader">
+    <div class="loader" id="loader-1"></div>
+    </div> -->
+    
+    
+    <script src="../../../../assets/js/jquery-min.js"></script>
+    <script src="../../../../assets/js/popper.min.js"></script>
+    <script src="../../../../assets/js/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/jquery.app.js"></script>
+    <script src="../../../../assets/js/main.js"></script>
+    
+    <script src="../../../../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    
+    <script src="../../../../assets/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/jszip.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/pdfmake.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/vfs_fonts.js"></script>
+    <script src="../../../../assets/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/buttons.print.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/buttons.colVis.min.js"></script>
+    
+    <script src="../../../../assets/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/responsive.bootstrap4.min.js"></script>
+    
+    <script src="../../../../assets/js/datatables.init.js"></script>
+    <!-- <script type="text/javascript">
+       
+     </script> -->
+    <!-- Mirrored from preview.uideck.com/items/inspire-pro/default/data-table.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jul 2019 08:55:27 GMT -->
+    </div>
