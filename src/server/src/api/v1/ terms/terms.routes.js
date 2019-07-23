@@ -10,5 +10,8 @@ router.post('/terms-edit',function(req,res){
 router.get('/terms',function(req,res){
     termsController.terms(req,res)
 })
+router.post('/editActiveTerms',function(req,res){
+    termsController.editActiveTerms(req,res)
+})
 
 module.exports =  router;

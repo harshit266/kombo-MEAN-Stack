@@ -37,7 +37,7 @@ public tableWidget: any;
     }
     this.StaffService.active(id,is_active).subscribe(function(res){
         if(res['code'] == 200 &&  res['last_updated']){
-          console.log()
+          console.log(is_active)
           $("#course_status_btn_" + id).text("Inactive");
         }else{
           $("#course_status_btn_" + id).text("active");

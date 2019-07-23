@@ -9,7 +9,7 @@ export class StaffCreateService {
   constructor(private http :HttpClient) { }
   uri='http://localhost:4000';
   addStaff(form) {
-    alert("entered")
+    // alert("entered")
    const obj = {
      name: form.name,
      email: form.email,

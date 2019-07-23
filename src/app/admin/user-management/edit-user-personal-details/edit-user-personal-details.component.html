@@ -45,8 +45,9 @@
             <div *ngIf="form.controls.email._parent.status">Email must be a valid email address</div>
         <!-- </div> -->
         </div>
-       <button class="btn btn-common mr-3" (click)="$event.preventDefault();updateUser(form);">Submit</button>
         <button class="btn btn-light">Cancel</button>
+        <button class="btn btn-common mr-3" (click)="$event.preventDefault();updateUser(form);">Submit</button>
+        
         </form>
         </div>
         </div>

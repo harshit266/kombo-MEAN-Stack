@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminLoginService } from './admin-login.service';
 import { Router } from '@angular/router';
+import { AuthService} from '../../auth.service';
 @Component({
   selector: 'app-admin-login',
   templateUrl: './admin-login.component.html',
@@ -8,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class AdminLoginComponent implements OnInit {
 
-  constructor(private adminLoginService: AdminLoginService, private router:Router) {
+  constructor(private adminLoginService: AdminLoginService, 
+              private router:Router,
+              private  Auth : AuthService) {
 
   }
 
@@ -22,6 +25,7 @@ export class AdminLoginComponent implements OnInit {
       data => {
           if(data['code'] == 200){
               this.router.navigate([`admin/dashboard`]);
+              this.Auth.setLoggedIn(true)
             }else{
               alert(data['msg']);
             }

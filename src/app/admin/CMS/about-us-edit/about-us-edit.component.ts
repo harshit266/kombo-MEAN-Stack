@@ -19,7 +19,7 @@ export class AboutUsEditComponent implements OnInit {
  id;
  des;
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get("id");
+    // this.id = this.route.snapshot.paramMap.get("id");
     setTimeout(function(){
     this.quill = new Quill('#editor-container', {
       modules: {
@@ -61,7 +61,7 @@ export class AboutUsEditComponent implements OnInit {
     // console.log(about)
     about = $(".ql-editor").html();
     console.log(about)
-    this.AboutUsEditService.about(about, this.id);
+    this.AboutUsEditService.about(about);
    
   }
 

@@ -12,8 +12,8 @@
     </div>
     <div class="col-12 col-lg-9 col-md-6">
     <ol class="breadcrumb float-right">
-    <li><a href="#">Tables</a></li>
-    <li class="active"> / Data Table</li>
+    <!-- <li><a href="#">Tables</a></li>
+    <li class="active"> / Data Table</li> -->
     </ol>
     </div>
     </div>
@@ -31,11 +31,13 @@
     </div>
     <div class="card-body">
     <div class="table-responsive">
-    <table id="datatable" class="table table-bordered table-striped "  [mfData]="user" #mf="mfDataTable" [mfRowsOnPage]="5">
+    <table id="datatable"  my_date.strftime="%Y%m%d%H%M%s" class="table table-bordered table-striped "  [mfData]="user" #mf="mfDataTable" [mfRowsOnPage]="5">
     <thead>
     <tr>
     <th>Name</th>
     <th>Email</th>
+    <th>Added On</th>
+    <th>Status</th>
     <th>Action</th>
     </tr>
     </thead>
@@ -43,14 +45,21 @@
         <tr *ngFor="let user of user">
             <td><mfDefaultSorter by="name">{{ user.username }}</mfDefaultSorter></td>
             <td><mfDefaultSorter>{{ user.email }}</mfDefaultSorter></td>
+            <td><time><mfDefaultSorter>{{ user.createdAt | date:'MMM-dd-yyyy' }}</mfDefaultSorter></time></td>
+            <td>
+                <mfDefaultSorter *ngIf ="user.is_active">Active</mfDefaultSorter>
+                <mfDefaultSorter *ngIf ="!user.is_active">Inactive</mfDefaultSorter>
+            
+            </td>
+            
             <td>
                 <button routerLink="/admin/personal-details/{{user._id}}"class="btn btn-success">View</button>
                 <button routerLink="/admin/edit-personal-details/{{user._id}}"class="btn btn-success">Edit</button>
                 <!-- <button routerLink="/admin/view-user"class="btn btn-success">Active</button> -->
-                <button  *ngIf="user.is_active" class="btn btn-success" (click)="active(user._id,user.is_active);" id="course_status_btn_{{user._id}}" >
+                <button  *ngIf="!user.is_active" class="btn btn-success" (click)="active(user._id,user.is_active);" id="course_status_btn_{{user._id}}" >
                     active
                 </button>
-                 <button  *ngIf="!user.is_active" class="btn btn-success" (click)="active(user._id,user.is_active);" id="course_status_btn_{{user._id}}" >
+                 <button  *ngIf="user.is_active" class="btn btn-danger" (click)="active(user._id,user.is_active);" id="course_status_btn_{{user._id}}" >
                     Inactive
                 </button>
             </td>

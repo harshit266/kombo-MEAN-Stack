@@ -14,6 +14,9 @@
                       <form class="forms-sample data" #form="ngForm">
                        <input class="form-control sign-in-field border-color-black" type="text" ngModel name="category" #category="ngModel" placeholder="Enter Category"/>  <br>
                        <input class="form-control sign-in-field border-color-black" type="number" ngModel name="intrest_rate" #intrest_rate="ngModel" placeholder="Enter Intrest Rate (%)"/>
+                       Category Image
+                       <input class="form-control sign-in-field border-color-black" type="file" id="category_image" (change)="convertCoverImageBase64();" ngModel name="category_image" #category_image="ngModel"/>
+                      
                        <!-- <div class="col-sm-12 text-right padding-top-6 padding-right-0 margin-top-0 padding-top-0 font-14" id="otp-submit"><a class="forgot" href="#">Forgot Password</a></div> -->
                     <button class="signup_button" (click)="addCategory(form)" id="submit">Submit</button>
                     </form>
@@ -55,8 +58,9 @@
     <thead>
     <tr>
     <th>Category</th>
-    <th>Intrest Rate</th>
+    <th>Intrest Rate (%)</th>
     <th>Added On</th>
+    <th>Status</th>
     <th>Action</th>
     </tr>
     </thead>
@@ -64,14 +68,19 @@
         <tr *ngFor="let user of user">
             <td><mfDefaultSorter by="name">{{ user.category }}</mfDefaultSorter></td>
             <td><mfDefaultSorter>{{ user.intrest_rate }}</mfDefaultSorter></td>
-            <td><mfDefaultSorter>{{ user.createdAt }}</mfDefaultSorter></td>
+            <td><time><mfDefaultSorter>{{ user.createdAt |  date:'MMM-dd-yyyy' }}</mfDefaultSorter></time></td>
+            <td >
+                <mfDefaultSorter *ngIf="user.is_active">Active</mfDefaultSorter>
+                <mfDefaultSorter *ngIf="!user.is_active">Inactive</mfDefaultSorter>
+            
+            </td>
            
             <td>
                 <button routerLink="/admin/category-edit/{{user._id}}"class="btn btn-success">Edit</button>
-                <button  *ngIf="user.is_active" class="btn btn-success" (click)="active(user._id,user.is_active);" id="course_status_btn_{{user._id}}" >
+                <button  *ngIf="!user.is_active" class="btn btn-success" (click)="active(user._id,user.is_active);" id="course_status_btn_{{user._id}}" >
                     active
                 </button>
-                 <button  *ngIf="!user.is_active" class="btn btn-success" (click)="active(user._id,user.is_active);" id="course_status_btn_{{user._id}}" >
+                 <button  *ngIf="user.is_active" class="btn btn-danger" (click)="active(user._id,user.is_active);" id="course_status_btn_{{user._id}}" >
                     Inactive
                 </button>
             </td>

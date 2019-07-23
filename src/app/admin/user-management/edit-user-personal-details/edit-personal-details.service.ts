@@ -8,7 +8,7 @@ export class EditPersonalDetailsService {
   constructor(private http: HttpClient) { }
   uri='http://localhost:4000';
   updateUser(form , id) {
-    alert("Succesfully Updated ")
+    // alert("Succesfully Updated ")
    const obj = {
      username: form.username,
      email: form.email

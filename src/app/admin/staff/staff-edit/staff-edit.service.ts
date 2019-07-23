@@ -9,7 +9,7 @@ export class StaffEditService {
   constructor(private http: HttpClient) { }
   uri='http://localhost:4000';
   updateStaff(form , id) {
-    alert("Succesfully Updated ")
+    // alert("Succesfully Updated ")
    const obj = {
      name: form.name,
      email: form.email ,

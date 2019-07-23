@@ -7,13 +7,13 @@ export class AboutUsEditService {
 
   constructor(private http :HttpClient) { }
   uri='http://localhost:4000';
-  about(about , id) {
+  about(about) {
   
    const obj = {
      about: about
    };
   //  console.log("aaaaaaaaaaaaaaa",obj);
-   this.http.post(`${this.uri}/about-edit/`+id, obj)
+   this.http.post(`${this.uri}/about-edit`, obj)
        .subscribe(res => console.log('Done'));
  }
 }

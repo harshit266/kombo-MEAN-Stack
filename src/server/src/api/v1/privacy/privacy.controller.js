@@ -29,6 +29,7 @@ privacyController.privacyEdit = (req,res)=>{
                 if(Client.length==0)
                 {
                     const u = new privacy();
+                    u.is_active=true;
                     u.description = req.body.privacy;
                     u.save(function(err, result){
                         if(err){
@@ -70,5 +71,18 @@ privacyController.privacyEdit = (req,res)=>{
    
         
  }
+
+ privacyController.editActivePrivacy= (req,res) => {
+    var is_active = req.body.is_active;
+    console.log(is_active);
+            privacy.findOneAndUpdate({}, {$set: {is_active:is_active}}, (err, data)=> {
+                if (err) {
+                    return res.send({"message":"Error while Updating","code":500});  
+                } else {
+                    return res.send({"message":"Updated Successfully","code":200,"last_updated":is_active});  
+                     // res.status(200).send({message:"data successfullly inserted",code:200})
+                }
+            }) ;
+}
 
  module.exports = privacyController;

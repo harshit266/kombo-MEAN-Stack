@@ -50,13 +50,14 @@ import { CategoryAddComponent } from './admin/master-setting/category-add/catego
 import { CategoryEditComponent } from './admin/master-setting/category-edit/category-edit.component';
 import {CategoryViewService} from './admin/master-setting/category-view/category-view.service';
 import {CategoryEditService} from './admin/master-setting/category-edit/category-edit.service';
-import { MatDialogModule, MatButtonModule  ,MatFormFieldModule,MatInputModule,
-  MatRippleModule} from '@angular/material';
+import { MatDialogModule, MatButtonModule  ,MatFormFieldModule,MatInputModule,MatRippleModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './admin/dashboard/dashboard/dashboard.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
-
-
+import { CmsComponent } from './admin/CMS/cms/cms.component';
+import {CmsService} from './admin/CMS/cms/cms.service';
+import {AuthGuard} from './auth.guard';
+import {AuthService} from './auth.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,6 +87,7 @@ import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
     CategoryEditComponent,
     DashboardComponent,
     AdminLoginComponent,
+    CmsComponent,
     
   ],
   imports: [
@@ -122,11 +124,16 @@ import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
     StaffViewService,
     StaffEditService,
     CategoryViewService,
-    CategoryEditService
+    CategoryEditService,
+    CmsService,
+    AuthGuard,
+    AuthService
+  
   ],
   entryComponents: [
     CategoryAddComponent
     ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

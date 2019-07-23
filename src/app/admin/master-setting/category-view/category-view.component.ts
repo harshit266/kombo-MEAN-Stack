@@ -25,6 +25,7 @@ export class CategoryViewComponent implements OnInit {
 user;
 animal: string;
 name: string;
+category_image;
 
 public tableWidget: any;
   constructor(private CategoryViewService:CategoryViewService ,public dialog: MatDialog) { }
@@ -87,7 +88,7 @@ $('#sign-in-form').animate({ 'left': "-700px" }, 'slow');
     }
     this.CategoryViewService.active(id,is_active).subscribe(function(res){
         if(res['code'] == 200 &&  res['last_updated']){
-          console.log()
+          console.log(is_active)
           $("#course_status_btn_" + id).text("Inactive");
         }else{
           $("#course_status_btn_" + id).text("active");
@@ -95,8 +96,21 @@ $('#sign-in-form').animate({ 'left': "-700px" }, 'slow');
     });;
   }
 
+  convertCoverImageBase64() {
+    var fileReader = new FileReader();
+   var refrence = this;
+    fileReader.onload = function () {
+    refrence.category_image = fileReader.result;  // data <-- in this var you have the file data in Base64 format
+    
+     };
+    
+    fileReader.readAsDataURL($('#category_image').prop('files')[0]);
+    console.log(this.category_image);
+}
+  
+
   addCategory(form) {
-   this.CategoryViewService.addCategory(form.value);
+   this.CategoryViewService.addCategory(form.value , this.category_image);
   }
 
 

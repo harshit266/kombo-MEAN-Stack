@@ -11,6 +11,9 @@ const category = new Schema({
         type: String,
         required: true
     },
+    category_image :{
+        type : String
+    },
     is_active: {
         type: Boolean
     }

@@ -8,7 +8,7 @@ export class CreateUserMgmtService {
   constructor(private http: HttpClient) { }
   uri='http://localhost:4000';
   addUser(form) {
-    alert("entered")
+    // alert("entered")
    const obj = {
      username: form.username,
      email: form.email

@@ -37,7 +37,7 @@ export class ViewUserMgmtComponent implements OnInit {
     }
     this.ViewUserMgmtService.active(id,is_active).subscribe(function(res){
         if(res['code'] == 200 &&  res['last_updated']){
-          console.log()
+          console.log(is_active)
           $("#course_status_btn_" + id).text("Inactive");
         }else{
           $("#course_status_btn_" + id).text("active");
@@ -48,7 +48,7 @@ export class ViewUserMgmtComponent implements OnInit {
   private initDatatable(): void {
     let exampleId: any = $('#datatable');
     this.tableWidget = exampleId.DataTable({
-      select: true
+      select: true,
     });
   }
 }

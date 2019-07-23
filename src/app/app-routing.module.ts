@@ -25,10 +25,12 @@ import {CategoryAddComponent} from './admin/master-setting/category-add/category
 import {CategoryEditComponent} from './admin/master-setting/category-edit/category-edit.component';
 import {DashboardComponent} from './admin/dashboard/dashboard/dashboard.component';
 import {AdminLoginComponent} from './admin/admin-login/admin-login.component';
+import {CmsComponent} from './admin/CMS/cms/cms.component';
+import {AuthGuard} from './auth.guard';
 
 const routes: Routes = [
   {path :'login' , component:AdminLoginComponent},
-  {path: 'admin' , component: AdminComponent , 
+  {path: 'admin' , component: AdminComponent , canActivate:[AuthGuard],
      children:[
        { path: 'user-management' , component: UserMgmtComponent},
        { path: 'create-user' , component: CreateUserMgmtComponent},
@@ -38,7 +40,7 @@ const routes: Routes = [
        {path : 'edit-personal-details/:id' , component:EditUserMgmtComponent},
        {path :'edit-borrowing-details/:id', component: EditUserBorrowingDetailsComponent},
        {path :'user-management', component:UserMgmtComponent},
-       {path :'about-us-edit/:id' , component:AboutUsEditComponent},
+       {path :'about-us-edit' , component:AboutUsEditComponent},
        {path : 'about' , component: AboutViewComponent},
        {path :'privacy-edit' , component:PrivacyEditComponent},
        {path :'privacy' , component:PrivacyViewComponent},
@@ -53,7 +55,8 @@ const routes: Routes = [
        {path :'category-view' , component:CategoryViewComponent},
        {path :'category-create' , component:CategoryAddComponent},
        {path :'category-edit/:id' , component:CategoryEditComponent},
-       {path :'dashboard' , component:DashboardComponent}
+       {path :'dashboard' , component:DashboardComponent},
+       {path :'cms' ,component:CmsComponent}
        
 
      ]

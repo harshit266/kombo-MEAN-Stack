@@ -25,10 +25,11 @@ export class CategoryViewService {
     return this.http.post(`${this.uri}/editActiveCategory/`+id,obj);
    }
 
-   addCategory(form) {
+   addCategory(form , category_image) {
     const obj = {
       category: form.category,
       intrest_rate: form.intrest_rate,
+      category_image:category_image
     };
     console.log(obj);
     this.http.post(`${this.uri}/addCategory`, obj)

@@ -7,6 +7,27 @@ masterController.addCategory = (req, res) => {
 
     const u = new Category()
 
+    var base64str = req.body.categoryImage;  
+    var buf = Buffer.from(base64str,'base64');
+     var fileName1 ="file_" + new Date().getTime();
+    // Grab the extension to resolve any image error
+    var ext = base64str.split(';')[0].match(/jpeg|png|gif/)[0];
+    // strip off the data: url prefix to get just the base64-encoded bytes
+    var data = base64str.replace(/^data:([A-Za-z-+/]+);base64,/, "");
+    var buf = new Buffer(data, 'base64');
+    var fileName1= "image_" + Date.now() + '.' + ext;
+    fs.writeFile('public/' + fileName1 , buf,function(err){
+        if(err){
+              console.log(err);
+            console.log("Error occurred");
+          //throw err;
+        }else{
+            console.log("Image uploaded");
+          //  return res.status(200).send({"message":"Image Uploaded Successfully","result":req.protocol + "://" + req.get('host') + req.originalUrl + "public/" + fileName,"status":200});  
+ 
+        }
+    });
+    u.category_image="http://localhost:4000"+ "/public/" + fileName1;
     u.category = req.body.category
     u.intrest_rate = req.body.intrest_rate
     u.is_active = true;
@@ -54,10 +75,34 @@ masterController.viewPerCategory = (req, res) => {
     })
 }
 masterController.editCategory = (req, res) => {
+
+    var base64str = req.body.categoryImage;  
+    var buf = Buffer.from(base64str,'base64');
+     var fileName1 ="file_" + new Date().getTime();
+    // Grab the extension to resolve any image error
+    var ext = base64str.split(';')[0].match(/jpeg|png|gif/)[0];
+    // strip off the data: url prefix to get just the base64-encoded bytes
+    var data = base64str.replace(/^data:([A-Za-z-+/]+);base64,/, "");
+    var buf = new Buffer(data, 'base64');
+    var fileName1= "image_" + Date.now() + '.' + ext;
+    fs.writeFile('public/' + fileName1 , buf,function(err){
+        if(err){
+              console.log(err);
+            console.log("Error occurred");
+          //throw err;
+        }else{
+            console.log("Image uploaded");
+          //  return res.status(200).send({"message":"Image Uploaded Successfully","result":req.protocol + "://" + req.get('host') + req.originalUrl + "public/" + fileName,"status":200});  
+ 
+        }
+    });
+
+
+
     Category.findOneAndUpdate({_id:req.params.id}, {$set: {
         category:req.body.category ,
         intrest_rate:req.body.intrest_rate,
-        
+        category_image:"http://localhost:4000"+ "/public/" + fileName1
     }}, function(err,res){
         if(err){
             console.log("Error");
@@ -70,7 +115,7 @@ masterController.editCategory = (req, res) => {
 
 masterController.editActiveCategory = (req, res) => {
     var is_active = req.body.is_active;
-    // console.log(isActive);
+    console.log(is_active);
             Category.findOneAndUpdate({ _id: req.params.id }, {$set: {is_active:is_active}}, (err, data)=> {
                 if (err) {
                     return res.send({"message":"Error while Updating","code":500});  

@@ -11,6 +11,9 @@ router.post('/cookies-edit',function(req,res){
 router.get('/cookies',function(req,res){
     cookiesController.cookies(req,res)
 })
+router.post('/editActiveCookies',function(req,res){
+    cookiesController.editActiveCookies(req,res)
+})
 // console.log("aaaaa")
 
 module.exports = router;

@@ -5,6 +5,9 @@ const about = new Schema({
 
     description: {
         type: String,
+    },
+    is_active :{
+        type :Boolean
     }
 
 }, {
