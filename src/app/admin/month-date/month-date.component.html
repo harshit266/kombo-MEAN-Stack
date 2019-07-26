@@ -1,0 +1,82 @@
+<div class="app header-default side-nav-dark">
+    <div class="layout">
+    
+    <div class="page-container">
+    
+    <div class="main-content">
+    <div class="container-fluid">
+    
+    <div class="breadcrumb-wrapper row">
+   
+    <div class="col-12 col-lg-9 col-md-6">
+    <ol class="breadcrumb float-right">
+    <li><a href="#"></a></li>
+    <li class="active"></li>
+    </ol>
+    </div>
+    </div>
+    
+    </div>
+    <div class="col-12">
+        <div class="card">
+        <div class="card-header border-bottom">
+        <h4 class="card-title"></h4>
+        </div>
+        <div class="card-body">
+        <p class="card-description">
+        
+        </p>
+        <form class="forms-sample data" #form="ngForm">
+        <div class="form-group">
+        <label for="exampleInputName1">Month</label>
+        <input type="number" class="form-control" id="exampleInputName1" placeholder="Enter Months" ngModel name="month" #month="ngModel" required>
+        </div>
+        <div class="form-group">
+        <label for="exampleInputEmail3">Due Payment date</label>
+        <input type="date" class="form-control" id="exampleInputEmail3" placeholder="Enter Date" ngModel name="date" #date="ngModel" required>
+        </div>
+       
+       <button class="btn btn-common mr-3" (click)="addData(form)" routerLink="/admin/query">Submit</button>
+        <!-- <button class="btn btn-light">Cancel</button> -->
+        </form>
+        </div>
+        </div>
+        </div>
+        
+    
+    
+    </div>
+    
+    </div>
+    </div>
+    
+    <!-- <div id="preloader">
+    <div class="loader" id="loader-1"></div>
+    </div> -->
+    
+    
+    <script src="../../../../assets/js/jquery-min.js"></script>
+    <script src="../../../../assets/js/popper.min.js"></script>
+    <script src="../../../../assets/js/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/jquery.app.js"></script>
+    <script src="../../../../assets/js/main.js"></script>
+    
+    <script src="../../../../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    
+    <script src="../../../../assets/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/jszip.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/pdfmake.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/vfs_fonts.js"></script>
+    <script src="../../../../assets/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/buttons.print.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/buttons.colVis.min.js"></script>
+    
+    <script src="../../../../assets/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="../../../../assets/plugins/datatables/responsive.bootstrap4.min.js"></script>
+    
+    <script src="../../../../assets/js/datatables.init.js"></script>
+    
+    <!-- Mirrored from preview.uideck.com/items/inspire-pro/default/data-table.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jul 2019 08:55:27 GMT -->
+    </div>

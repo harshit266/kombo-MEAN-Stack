@@ -1,30 +1,26 @@
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
-const userschema = new Schema({
+const user = new Schema({
 
-    email: {
-        type: String,
-        unique: true,
-        required: true
-    },
+   
     username: {
         type: String,
-        unique: true,
-        required: true
     },
-
-    bank_statement: {
-        type: String
+    email :{
+        type : String
     },
-    category: {
-        type: String
+    password :{
+        type : String
     },
-    number: {
-        type: Number
+    otp :{
+        type :Number
     },
     is_active: {
         type: Boolean
+    },
+    user_id :{
+        type :String
     }
 
 
@@ -34,6 +30,6 @@ const userschema = new Schema({
     })
 
 
-var user = mongoose.model('User', userschema)
+var User = mongoose.model('User', user)
 
-module.exports = user;
+module.exports = User;

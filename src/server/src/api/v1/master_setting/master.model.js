@@ -8,7 +8,7 @@ const category = new Schema({
         required: true
     },
     intrest_rate: {
-        type: String,
+        type: Number,
         required: true
     },
     category_image :{

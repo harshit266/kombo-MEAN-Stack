@@ -1,5 +1,5 @@
 const express = require('express')
-const querryController =require('../user/user.model')
+const querryController =require('../query_management/query.controller')
 
 const router =express.Router();
 
@@ -17,6 +17,13 @@ router.post('/queryFilterAmount',function(req,res){
 })
 router.post('/queryAddUser',function(req,res){
     querryController.queryAddUser(req,res)
+})
+router.post('/added',function(req,res){
+    querryController.added(req,res)
+})
+
+router.post('/rejected',function(req,res){
+    querryController.rejected(req,res)
 })
 router.get('/queryViewUser',function(req,res){
     querryController.queryViewUser(req,res)

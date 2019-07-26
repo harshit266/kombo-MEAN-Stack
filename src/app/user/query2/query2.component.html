@@ -1,0 +1,128 @@
+
+<section class="page_breadcrumbs ds color parallax section_padding_top_75 section_padding_bottom_75">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 class="text-uppercase">Personal Details</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="ls section_padding_top_75 padding-bottom-50 ">
+    <div class="container">
+
+        <div class="row">
+
+            <form class="shop-register" role="form" #f="ngForm" >
+                <h2>Query Form For Loan Borrowing :</h2>
+
+                <div class="col-sm-6 padding-left-0 form-group col">
+                    <div class="form-group validate-required" id="billing_first_name_field">
+                        <label for="billing_first_name" class="control-label ">
+                            <span class="grey">Name:</span>
+                            <span class="required">*</span>
+                        </label>
+
+                        <input type="text" class="form-control register-form"  id="billing_first_name" placeholder="" value="" name="billing_first_name" ngModel #billing_first_name="ngModel" required>
+                        <div class="col-sm-6 padding-left-0"*ngIf="f.submitted && billing_first_name.invalid" class="invalid-feedback">
+                            <div *ngIf="billing_first_name.errors.required">Name is required</div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="col-sm-6 padding-left-0">
+                    
+
+                    <div class="form-group validate-required validate-email" id="billing_email_field">
+                        <label for="billing_email" class="control-label">
+                            <span class="grey">Email Address:</span>
+                            <span class="required">*</span>
+                        </label>
+
+                        <input type="text" class="form-control register-form " name="billing_email" ngModel #billing_email="ngModel" id="billing_email" placeholder="" value="" required>
+                        <div class="col-sm-6 padding-left-0"*ngIf="f.submitted && billing_email" class="invalid-feedback">
+                            <div *ngIf="billing_email.errors.required">Email is required</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                
+                <div class="col-sm-6 padding-left-0">
+
+                    <div class="form-group">
+                        <label for="billing_state" class="control-label">
+                            <span class="grey">Borrowing For:</span>
+                            <span class="required">*</span>
+                        </label>
+
+                        <select class="form-control register-form" name="billing_state" id="billing_state" >
+        
+                            <option value="Vechicle">Vehicle</option>
+                            <option value="Rent Payment">Rent Payment</option>
+                            <option value="Student Fees">Student Fees</option>
+                            <option value="Medical Fees">Medical Fees</option>
+                            <!-- <option  value="{{d}}" selected>{{d}} </option> -->
+                            <option value="d" selected="selected">{{d}} </option>
+                            <option value="Buisness Function">Business Function</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group address-field validate-required validate-postcode" id="billing_postcode_field">
+                        <label for="billing_postcode" class="control-label">
+                            <span class="grey">BankStatement</span>
+                            <span class="required">*</span>
+                        </label>
+
+                        <input type="file" class="form-control register-form inputfile" name="file" ngModel #file="ngModel" id="file" (change)="convertCoverImageBase64()" accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,
+                        text/plain, application/pdf, image/*" required/>
+                        <div class="col-sm-6 padding-left-0"*ngIf="f.submitted && file" class="invalid-feedback">
+                            <div *ngIf="file.errors.required">Bank Statement is required</div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                            <div class="col-sm-6 padding-left-0">
+
+                    <div class="form-group address-field validate-required" id="billing_city_field">
+                        <label for="billing_city" class="control-label">
+                            <span class="grey">Town / City:</span>
+                            <span class="required">*</span>
+                        </label>
+
+                        <input type="text" class="form-control register-form " name="billing_city" id="billing_city" placeholder="" value="">
+
+                    </div>
+
+                    <div class="form-group validate-required validate-phone" id="billing_phone_field">
+                        <label for="billing_phone" class="control-label">
+                            <span class="grey">Phone:</span>
+                            <span class="required">*</span>
+                        </label>
+
+                        <input type="text" class="form-control register-form " name="billing_phone" maxlength="16" ngModel #billing_phone="ngModel" id="billing_phone" placeholder="" value="" required>
+                        <div class="col-sm-6 padding-left-0"*ngIf="f.submitted && billing_phone" class="invalid-feedback">
+                            <div *ngIf="billing_phone.errors.required">Number is required</div>
+                        </div>
+                    </div>
+
+                </div>
+            
+                <div class="col-sm-12 padding-left-0">
+
+                    <button type="submit" class="theme_button float-right wide_button color1" (click)="add(f);">Register Now</button>
+                    <button type="reset" class="background-white color-blue border-0 padding-0 font-14 float-right margin-right-40 line-height-60">Clear Form</button>
+                    <!-- <span type="reset" class="font-size-18 float-right clear-button margin-right-40 line-height-60">Clear Form</span> -->
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>                                                                                                                                                                                                                                                    

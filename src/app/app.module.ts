@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http' ;
-import {FormsModule} from '@angular/forms';
+import {FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateUserMgmtComponent } from './admin/user-management/create-user-mgmt/create-user-mgmt.component';
@@ -11,7 +11,6 @@ import {AdminComponent} from './admin/admin.component'
 import { HttpClientModule } from '@angular/common/http'; 
 import { PersonalDetailsComponent } from './admin/user-management/personal-details/personal-details.component';
 import { BorrowingDetailsComponent } from './admin/user-management/borrowing-details/borrowing-details.component'
-
 import {DataTableModule} from "angular-6-datatable";
 import {EditPersonalDetailsService} from './admin/user-management/edit-user-personal-details/edit-personal-details.service'
 import {ViewUserMgmtService} from './admin/user-management/view-user-mgmt/view-user-mgmt.service';
@@ -56,8 +55,16 @@ import { DashboardComponent } from './admin/dashboard/dashboard/dashboard.compon
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { CmsComponent } from './admin/CMS/cms/cms.component';
 import {CmsService} from './admin/CMS/cms/cms.service';
+import {ViewQueryService} from './admin/query-management/view-query/view-query.service';
 import {AuthGuard} from './auth.guard';
 import {AuthService} from './auth.service';
+import { UserComponent } from './user/user.component';
+import {UserService} from './user/user.service';
+import { Query1Component } from './user/query1/query1.component';
+import { Query2Component } from './user/query2/query2.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { MonthDateComponent } from './admin/month-date/month-date.component';
+import {MonthDateService} from './admin/month-date/month-date.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -88,6 +95,11 @@ import {AuthService} from './auth.service';
     DashboardComponent,
     AdminLoginComponent,
     CmsComponent,
+    UserComponent,
+    Query1Component,
+    Query2Component,
+    ChangePasswordComponent,
+    MonthDateComponent,
     
   ],
   imports: [
@@ -102,7 +114,8 @@ import {AuthService} from './auth.service';
     MatButtonModule,
     MatInputModule,
     MatRippleModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
     // QuillModule.forRoot()
   ],
   providers: [
@@ -126,8 +139,11 @@ import {AuthService} from './auth.service';
     CategoryViewService,
     CategoryEditService,
     CmsService,
+    ViewQueryService,
     AuthGuard,
-    AuthService
+    AuthService,
+    UserService,
+    MonthDateService
   
   ],
   entryComponents: [

@@ -8,6 +8,8 @@ const contactRouter= require('./contact_us/contact.routes');
 const staffRouter = require('./staff/staff.routes');
 const categoryRouter = require('./master_setting/master.routes');
 const loginRouter= require('./login/login.routes');
+const userRouter = require('./user/user.routes');
+
 x= (app)=>{
     console.log("initiallizing routes")
     app.use('',adminRouter)  
@@ -20,6 +22,9 @@ x= (app)=>{
     app.use('',staffRouter)
     app.use('',categoryRouter)
     app.use('',loginRouter)
+    app.use('',queryRouter)
+    app.use('',userRouter)
+    
 
 
 }

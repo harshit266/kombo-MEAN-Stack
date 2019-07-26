@@ -10,6 +10,6 @@ export class BorrowingService {
   getProducts(id) {
     return this
            .http
-           .get(`${this.uri}/viewPerUser/`+id);
+           .get(`${this.uri}/viewBorrowing/`+id);
   }
 }

@@ -1,0 +1,301 @@
+  <head>
+      <title>Kombo Cash/Homepage</title>
+      <meta charset="utf-8">
+      
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+      <link href="../../assets/css-user/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+      <link href="../../assets/css-user/animations.css" rel="stylesheet" type="text/css"/>
+      <link href="../../assets/css-user/fonts.css" rel="stylesheet" type="text/css"/>
+      <link href="././assets/css-user/main.css" rel="stylesheet" type="text/css"/>
+      <link href="../../assets/css-user/shop.css" rel="stylesheet" type="text/css"/>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+      <script src="https://kit.fontawesome.com/9510a3fc0f.js"></script>
+      
+   </head>
+   <body>
+      <!--[if lt IE 9]>
+      <div class="bg-danger text-center">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" class="highlight">upgrade your browser</a> to improve your experience.</div>
+      <![endif]-->
+         <!-- <div class="preloader">
+            <div class="preloader_image"></div>
+      </div> -->
+      <div class="col-sm-12 sign_in text-center margin-top-0" id="sign_in">
+              
+
+            <div class="col-sm-4 form-group padding-bottom-20 sign-in-form font-20 background-white" id="sign-in-form">
+               <div class="col-sm-12 cross text-right cursor-pointer margin-top-0 padding-right-38" id="cut">
+               <i class="fas fa-times text-right"></i>
+               </div>
+
+               <img class="width-60" src="../../assets/images-user/horizontal2.png" alt="">
+              <h3 class="margin-top-0">Sign-In</h3>
+              <form #form="ngForm">
+               <input class="form-control sign-in-field border-color-black" type="email" name="username" ngModel #username="ngModel" placeholder="E-mail/Username" required />  <br>
+               <input class="form-control sign-in-field border-color-black" type="password" name="password" ngModel #password="ngModel" placeholder="Password" required />
+               <div class="col-sm-12 text-right padding-top-6 padding-right-0 padding-top-0 font-14" id="forgot-password-button"><a class="forgot">Forgot Password</a></div>
+                <button class="theme_button color1 wide_button padding10-30" id="signin_button" (click)="signIn(form);">Submit</button>
+             </form>
+            </div>
+            <div class="col-sm-4 form-group forgot-password padding-bottom-20 sign-in-form padding-top-0 font-20 background-white" id="forgot-password-email">
+               <div class="col-sm-12 cross text-right cursor-pointer margin-top-0 padding-right-38" id="cut">
+               <i class="fas fa-times text-right"></i>
+               </div>
+               <form #form="ngForm">
+              <h3 class="">Forgot Password</h3>
+              
+              <h6>Please enter your registered Email ID</h6>
+              
+               <input class="form-control sign-in-field border-color-black" type="email" name="username" ngModel #username="ngModel" placeholder="E-mail/Username" required />  <br>
+                <a><button class="theme_button color1 wide_button padding10-30" id="forgot-password-email-button" (click)="forgotPassword(form)">Submit</button></a>
+             </form>
+            </div>
+            <div class="col-sm-4 form-group forgot-password padding-bottom-20 sign-in-form padding-top-0 font-20 background-white" id="forgot-password">
+               <div class="col-sm-12 cross text-right cursor-pointer margin-top-0 padding-right-38" id="cut">
+               <i class="fas fa-times text-right"></i>
+               </div>
+              <h3 class="">Forgot Password</h3>
+              <h6>Please enter the OTP sent to your Email Id</h6>
+              <form #f="ngForm">
+               <input class="form-control sign-in-field" type="number" name="otp" ngModel #otp="ngModel" placeholder="OTP" required />  <br>
+                <a href="change-password.html"><button class="theme_button color1 wide_button padding10-30" id="signin_button" (click)="checkOtp(f)">Submit</button></a>
+           </form>
+</div> 
+      </div>     
+      <div class="header_top secondary-bg ">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-12 margin-0 padding-left0">
+               <div class="contact_info col-sm-6 margin-top-0 margin-bottom-0 padding-0">
+                  <a href="mailto:info@example.com"><i class="fa fa-envelope" aria-hidden="true"></i> info@example.com</a>
+                  <a href="tel:+61-1234-5678-9" class="margin-left-50"><i class="fa fa-phone" aria-hidden="true"></i> +61-1234-5678-9</a>
+               </div>
+                 
+            <div class="col-md-2 col-sm-2 to_animate margin-bottom-0 pull-right padding-right-0 margin-top-4">
+            <div class="widget_text text-right">
+               
+               <div class="col-sm-3 media small-teaser margin-0 padding-0 ">
+                  <div class="media-middle">
+                     <a href="#" class="social-icon color-white color-icon border-icon -icon soc-facebook border-0 margin-bottom-0"></a>
+                  </div>
+                  
+               </div>
+               <div class="col-sm-3 media small-teaser margin-0 padding-0 ">
+                  <div class="media-middle">
+                     <a href="#" class="social-icon color-icon border-icon -icon soc-twitter color-white border-0 margin-bottom-0"></a>
+                  </div>
+                 
+               </div>
+               <div class="col-sm-3 media small-teaser margin-0 padding-0">
+                  <div class="media-middle">
+                     <a href="#" class="social-icon color-icon border-icon -icon soc-linkedin color-white border-0 margin-bottom-0"></a>
+                  </div>
+                  
+               </div>
+               <div class="col-sm-3 media small-teaser margin-0 padding-0">
+                  <div class="media-middle">
+                     <a href="#" class="social-icon color-icon border-icon -icon soc-pinterest color-white border-0 margin-bottom-0"></a>
+                  </div>
+                 
+               </div>
+
+            </div>
+
+         </div>
+                 
+            </div>
+         </div>
+      </div>
+   </div>
+ 
+
+
+      <div id="canvas">
+         <div id="box_wrapper">
+            <!-- template sections -->
+            <!-- Header sections: Start -->
+            <header class="page_header header_white toggler_xs_right section_padding_30 height-auto">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-sm-12 display_table">
+                        <div class="header_left_logo padding-left0 display_table_cell">
+                           <a href="dashboard.html" class="logo top_logo padding-0">
+                           <img src="../../assets/images-user/horizontal2.png" alt="">
+                           </a>
+                        </div>
+                        <div class="header_mainmenu display_table_cell text-center padding-0">
+                           <!-- main nav start -->
+                           <nav class="mainmenu_wrapper">
+                              <ul class="mainmenu nav sf-menu">
+                                 <li class="active">
+                                    <a href="homepage.html">Home</a>
+                                 </li>
+                                 <li>
+                                    <a href="Borrowing.html">Borrowing</a>
+                                 </li>
+                                 <li>
+                                    <a href="faq2.html">FAQ's</a>
+                                 </li>
+                                 <li>
+                                    <a href="contact4.html">Contact Us</a>
+                                 </li>
+                                 <li>
+                                    <!-- <a href="blog-right.html">Sign In</a> -->
+                                    <div class="col-sm-4">
+                                       <div class="loan-form-submit">
+                                          <button type="submit" id="sign-in-button" name="loan_submit" class="theme_button color1 wide_button" >Sign IN</button>
+                                       </div>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </nav>
+                           <!-- eof main nav -->
+                           <!-- header toggler -->
+                           <span class="toggle_menu">
+                              <span></span>
+                           </span>
+                        </div>
+                        <!-- <div class="header_right_buttons display_table_cell text-right hidden-xs">
+                           <p class="header-meta grey">
+                                           <i class="fa fa-phone highlight" aria-hidden="true"></i>
+                                           <strong>1-888</strong>-123-4567
+                                       </p>
+                           </div> -->
+                     </div>
+                  </div>
+               </div>
+            </header>
+            <!-- Header sections: End -->
+
+           <!--  <footer class="page_footer ds">
+               <div class="container">
+                  <div class="row">
+                     
+                     <div class="col-sm-12 text-center">
+                        <a href="index.htm" class="col-sm-4 logo vertical_logo ">
+                        <img src="images\horizontal2.png" class="max-width margin-0 margin-bottom-0" alt="">
+                        </a>
+                        
+                        <ul class="col-sm-8 line-height-6 inline-content font-size-18 semibold darklinks margin-bottom-0">
+                           <li>
+                              <a href="#0" class="padding-left-0 padding-right-0 footer-color ">About</a>
+                           </li>
+                           <li>
+                              <a href="#0" class="padding-left-0 padding-right-0 footer-color ">Terms & Conditions</a>
+                           </li>
+                           <li>
+                              <a href="#0" class="padding-left-0 padding-right-0 footer-color ">Privacy Policy</a>
+                           </li>
+                           <li>
+                              <a href="#0" class="padding-left-0 padding-right-0 footer-color ">Cookie Policy</a>
+                           </li>
+                        </ul>
+                        <div class="col-sm-12 text-center padding-0 margin-top-0">
+                        <p class="font-16">Kombo Cash intends to change the way credit is delivered in India by harnessing the power of technology and digital platform.
+                           Our unique model is built on the premise that when information is transparently made available to both borrowers and lenders, decision making is simple and noise free.
+                        </p>
+                     </div>
+                     </div>
+                  </div>
+               </div>
+            </footer> -->
+<router-outlet></router-outlet>
+<footer class="page_footer ds section_padding_top_50 section_padding_bottom_65 columns_padding_25 table_section">
+   <div class="container padding-0">
+      <div class="row font-14">
+         <div class="col-md-4 col-sm-12 text-center">
+            <div class="widget widget_text">
+               <a href="index.htm" class="logo vertical_logo">
+                  <img src="../../assets/images-user/horizontal2.png" class="max-width-225" alt="">
+               </a>
+
+               <p class="divider_30">Kombo Cash actively pursues its mission of supporting healthy and productive lifestyles for the community while teaching, enhancing, and connecting residents and youth to fresh produce and education about urban gardening.</p>
+
+             
+            </div>
+         </div>
+         <div class="col-md-4 col-sm-6 text-center">
+            <div class="widget widget_text widget_media_margin">
+               <h3 class="widget-title color-blue-grey">Explore</h3>
+               <ul class="list1 no-bullets no-top-border no-bottom-border greylinks">
+                  <li>
+                     <a href="#">About Us</a>
+                  </li>
+                  <li>
+                     <a href="#">Terms and Conditions</a>
+                  </li>
+                  <li>
+                     <a href="#">Cookie Policy</a>
+                  </li>
+                  <li>
+                     <a href="#">Privacy Policy</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div class="col-md-4 col-sm-6 text-center">
+            <div class="widget widget_mailchimp widget_media_margin">
+               <h3 class="widget-title color-blue-grey">Newsletter</h3>
+                 
+
+            <ul class="list1 no-bullets no-top-border no-bottom-border">
+
+               <li class="padding-0">
+                  <div class="media">
+                     <div class="media-left">
+                        <i class="rt-icon2-shop highlight2 color-pink"></i>
+                     </div>
+                     <div class="media-body">
+                        <h6 class="media-heading color-blue-grey">Postal Address:</h6>
+                        PO Box 97845 Some str. 567, Los Angeles, California, United States
+                     </div>
+                  </div>
+               </li>
+               <li class="padding-0">
+                  <div class="media">
+                     <div class="media-left">
+                        <i class="rt-icon2-phone5 highlight2 color-pink"></i>
+                     </div>
+                     <div class="media-body">
+                        <h6 class="media-heading color-blue-grey">Phone:</h6>
+                        8(800) 123-12345
+                     </div>
+                  </div>
+               </li>
+               <li class="padding-0">
+                  <div class="media">
+                     <div class="media-left">
+                        <i class="rt-icon2-mail highlight2 color-pink"></i>
+                     </div>
+                     <div class="media-body greylinks">
+                        <h6 class="media-heading color-blue-grey">Email:</h6>
+                        <a href="mailto:your@mail.com">komboCash@example.com</a>
+                     </div>
+                  </div>
+               </li>
+            </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
+            <section class="ds color page_copyright with_top_border_container">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-sm-12 text-center">
+                        <p class="font-size-14">&copy; Copyright 2019 <span class="font-weight-900">Kombo Cash</span>. Made with <span style="color: red; font-size: 25px;">&hearts;</span> by <span class="font-weight-900" style="color: #b81f6f;">VAYUZ Technologies.</span></p>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+         <!-- eof #box_wrapper -->
+      </div>
+      <!-- eof #canvas -->
+      <script src="../../assets/js-user/compressed.js"></script>
+      <script src="../../assets/js-user/main.js"></script>
+      <script type="text/javascript">
+               </script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+   </body>

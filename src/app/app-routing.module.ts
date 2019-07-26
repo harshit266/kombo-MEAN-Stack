@@ -26,9 +26,15 @@ import {CategoryEditComponent} from './admin/master-setting/category-edit/catego
 import {DashboardComponent} from './admin/dashboard/dashboard/dashboard.component';
 import {AdminLoginComponent} from './admin/admin-login/admin-login.component';
 import {CmsComponent} from './admin/CMS/cms/cms.component';
+import {ViewQueryComponent} from './admin/query-management/view-query/view-query.component';
 import {AuthGuard} from './auth.guard';
-
+import {UserComponent} from './user/user.component';
+import {Query1Component} from './user/query1/query1.component';
+import {Query2Component} from './user/query2/query2.component';
+import {ChangePasswordComponent} from './change-password/change-password.component';
+import {MonthDateComponent} from './admin/month-date/month-date.component';
 const routes: Routes = [
+  {path :'change-password/:id' , component:ChangePasswordComponent},
   {path :'login' , component:AdminLoginComponent},
   {path: 'admin' , component: AdminComponent , canActivate:[AuthGuard],
      children:[
@@ -56,11 +62,20 @@ const routes: Routes = [
        {path :'category-create' , component:CategoryAddComponent},
        {path :'category-edit/:id' , component:CategoryEditComponent},
        {path :'dashboard' , component:DashboardComponent},
-       {path :'cms' ,component:CmsComponent}
+       {path :'cms' ,component:CmsComponent},
+       {path :'query', component:ViewQueryComponent},
+       {path :'month-date' , component:MonthDateComponent}
        
 
      ]
     },
+    {path :'user' ,component:UserComponent , 
+    children :[
+      {path :'query' , component:Query1Component},
+      {path :'query1' , component:Query2Component},
+     
+    ]  
+  }
   ];
 
 

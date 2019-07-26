@@ -133,7 +133,7 @@ adminController.addUser = (req, res) => {
                     to: email,
                     subject: "Hello ✔",
                     text: "This is your Credentials :",
-                    html: "<b>Email:</b><br><b>Password :<b>"
+                    html: "<b>Email : </b>"+email + " <br><b>Password : <b>"+"12345"
                 });
 
                 console.log("Message sent: %s", info.messageId);
@@ -165,7 +165,6 @@ adminController.viewUser = (req, res) => {
     })
 }
 
-module.exports = adminController
 
 adminController.viewPerUser = (req, res) => {
 

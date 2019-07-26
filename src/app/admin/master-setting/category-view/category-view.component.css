@@ -1,3 +1,9 @@
+/* @import url('../../../../assets/plugins/datatables/dataTables.bootstrap4.min.css');
+@import url('../../../../assets/plugins/datatables/buttons.bootstrap4.min.css');
+@import url('../../../../assets/plugins/datatables/responsive.bootstrap4.min.css');
+@import url('../../../../assets/css/main.css');
+@import url('../../../../assets/css/bootstrap.min.css'); */
+
 
 .sign_in{
     display: none;
