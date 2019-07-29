@@ -5,7 +5,7 @@ import {AboutUsEditService} from './about-us-edit.service'
 import { ActivatedRoute } from "@angular/router";
 import {AboutViewService} from '../about-view/about-view.service'
 import {About} from '../../../../server/src/api/v1/about_us/about.model.js';
-import $ from "jquery";
+import * as $ from "jquery";
 @Component({
   selector: 'app-about-us-edit',
   templateUrl: './about-us-edit.component.html',
@@ -18,6 +18,7 @@ export class AboutUsEditComponent implements OnInit {
   constructor(private AboutUsEditService:AboutUsEditService ,private AboutViewService:AboutViewService, private route: ActivatedRoute) {}
  id;
  des;
+ 
   ngOnInit() {
     // this.id = this.route.snapshot.paramMap.get("id");
     setTimeout(function(){
@@ -56,10 +57,10 @@ export class AboutUsEditComponent implements OnInit {
   }
   submit(form)
   {
-    var about = document.querySelector('input[name=about]');
+    // var about = document.querySelector('input[name=about]');
     // about = this.quill.root.innerHTML;
     // console.log(about)
-    about = $(".ql-editor").html();
+   var  about = $(".ql-editor").html();
     console.log(about)
     this.AboutUsEditService.about(about);
    

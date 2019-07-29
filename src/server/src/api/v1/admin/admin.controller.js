@@ -171,7 +171,7 @@ adminController.viewPerUser = (req, res) => {
     //let email = req.body.email;
     console.log("0-------------------------------------")
     console.log("-------", req.params.id)
-    user.findById(req.params.id, (err, Client) => {
+    user.findOne({user_id:req.params.id}, (err, Client) => {
         if (err) {
             console.log("--", err)
             return res.status(400).send(err)
@@ -188,7 +188,7 @@ adminController.viewPerUser = (req, res) => {
 adminController.updatePersonaldetails = (req, res) => {
     console.log(req.params.id)
     console.log(req.body.email , req.body.username);
-    user.findOneAndUpdate({_id:req.params.id}, {$set: {username:req.body.username ,  email:req.body.email}}, function(err,res){
+    user.findOneAndUpdate({user_id:req.params.id}, {$set: {username:req.body.username ,  email:req.body.email}}, function(err,res){
         if(err){
             console.log("Error");
         }else{

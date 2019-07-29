@@ -13,6 +13,7 @@ userController.login = (req, res) => {
    
     User.findOne({ email: email }, { email: 1, password: 1 }, (err, user) => {
         if (err) {
+            console.log(err)
             res.status(400).send(err)
         } else {
             if (user) {
@@ -159,6 +160,7 @@ userController.addBorrowing = (req, res) => {
                     return res.status(400).send(err)
                 } else {
                     if (Client) {
+                        b.category=req.body.category
                         b.amount=((12)*(req.body.amount)) + req.body.amount
                         b.due_date = req.body.date;
                         b.month = req.body.month;
@@ -186,15 +188,17 @@ userController.viewBorrowing = (req, res) => {
     // console.log("first",req.params.id);
     Borrowing.findOne({borrowing_id:req.params.id}, (err, Client) => {
     // console.log("first",req.params.id);
-        
+        console.log(Client)
         if (err) {
             console.log("-- error", err)
             return res.status(400).send(err)
         } else {
+            // console.log("aaaaa")
             if (Client) {
                 console.log("sddddd")
                 return res.status(200).send(Client)
             } else {
+                console.log("ooo")
                 res.status(400).send("Doesn't exist")
             }
 

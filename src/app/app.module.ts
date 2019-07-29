@@ -65,6 +65,12 @@ import { Query2Component } from './user/query2/query2.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { MonthDateComponent } from './admin/month-date/month-date.component';
 import {MonthDateService} from './admin/month-date/month-date.service';
+import { PaymentViewComponent } from './admin/payment-view/payment-view.component';
+import { PersistenceModule } from 'angular-persistence';
+import { AfterUserLoginComponent } from './after-user-login/after-user-login.component';
+import { BorrowingPerUserComponent } from './after-user-login/borrowing-per-user/borrowing-per-user.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -100,6 +106,9 @@ import {MonthDateService} from './admin/month-date/month-date.service';
     Query2Component,
     ChangePasswordComponent,
     MonthDateComponent,
+    PaymentViewComponent,
+    AfterUserLoginComponent,
+    BorrowingPerUserComponent,
     
   ],
   imports: [
@@ -115,7 +124,8 @@ import {MonthDateService} from './admin/month-date/month-date.service';
     MatInputModule,
     MatRippleModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PersistenceModule
     // QuillModule.forRoot()
   ],
   providers: [
@@ -149,7 +159,8 @@ import {MonthDateService} from './admin/month-date/month-date.service';
   entryComponents: [
     CategoryAddComponent
     ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 
 export class AppModule { }

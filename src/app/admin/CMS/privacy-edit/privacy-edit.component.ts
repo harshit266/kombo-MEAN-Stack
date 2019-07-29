@@ -3,7 +3,7 @@ import {PrivacyEditService} from './privacy-edit.service'
 import { ActivatedRoute } from "@angular/router";
 import * as Quill from 'quill'; 
 import {Privacy} from '../../../../server/src/api/v1/privacy/privacy.model.js';
-import $ from "jquery";
+import * as $ from "jquery";
 import {PrivacyViewService} from '../privacy-view/privacy-view.service';
 @Component({
   selector: 'app-privacy-edit',
@@ -53,10 +53,10 @@ quill;
    }
    submit(form)
    {
-     var about = document.querySelector('input[name=about]');
+    //  var about = document.querySelector('input[name=about]');
     //  about = this.quill.root.innerHTML;
      // console.log(about)
-     about = $(".ql-editor").html();
+     var about = $(".ql-editor").html();
      this.PrivacyEditService.privacy(about);
     
    }

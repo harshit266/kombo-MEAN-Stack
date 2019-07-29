@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{ AboutViewService} from './about-view.service'
 import {About} from '../../../../server/src/api/v1/about_us/about.model.js';
-import $ from "jquery";
+import * as $ from "jquery";
 
 @Component({
   selector: 'app-about-view',

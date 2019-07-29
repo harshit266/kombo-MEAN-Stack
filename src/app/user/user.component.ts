@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery'
 import {UserService } from './user.service';
 import { Router } from '@angular/router';
+import { PersistenceService } from 'angular-persistence';
 
 @Component({
   selector: 'app-user',
@@ -10,7 +11,11 @@ import { Router } from '@angular/router';
 })
 export class UserComponent implements OnInit {
 x;
-  constructor(private UserService :UserService , private router :Router ) { }
+  constructor(private UserService :UserService ,
+     private router :Router ,
+     private persistenceService:PersistenceService
+    
+    ) { }
 
   ngOnInit() {
     $('#sign-in-button').click(function(){
@@ -53,6 +58,8 @@ $('#forgot-password-email').animate({ 'left': "-700px" }, 'slow');
       data => {
           if(data['code'] == 200){
               // this.router.navigate([`admin/dashboard`]);
+              this.persistenceService.set('email', this.x.username);
+              // console.log(this.persistenceService.get('email'))
               console.log("Succesfully Signed In ")
               // this.Auth.setLoggedIn(true)
             }else{

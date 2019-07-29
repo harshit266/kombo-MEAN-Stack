@@ -9,7 +9,7 @@
             
             <div class="breadcrumb-wrapper row">
             <div class="col-12 col-lg-3 col-md-6">
-            <h4 class="page-title">Staff Management</h4>
+            
             <button *ngFor="let user of user" routerLink="/admin/personal-details/{{user.borrowing_id}}" class="btn btn-danger" >Personal</button>
             <button routerLink="/admin/borrowing-details" class="btn btn-success" >Borrowing</button>
             <br>
@@ -28,7 +28,7 @@
             <div class="col-12">
             <div class="card">
             <div class="card-header border-bottom">
-            <h4 class="card-title">Staff Details</h4>
+            <h4 class="card-title">Details</h4>
             </div>
             <div class="col-sm-12 text-right">
             <!-- <button routerLink="/admin/staff-create" class="btn btn-success" >Add Staff</button> -->
@@ -51,9 +51,7 @@
                             <td><mfDefaultSorter>{{ user.month }}</mfDefaultSorter></td>
                             <td><mfDefaultSorter>{{ user.installment_per_month }}</mfDefaultSorter></td>
                             <td><mfDefaultSorter> {{user.due_date }}</mfDefaultSorter></td>
-                            <td><mfDefaultSorter> {{user.amount }}</mfDefaultSorter></td>
-                            
-                           <td><button class="btn btn-success"> View </button></td> 
+                           <td><button class="btn btn-success"(click)="paymentView(user.borrowing_id)"> View </button></td> 
                                         
                         </tr>
                    

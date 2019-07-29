@@ -3,7 +3,7 @@ import * as Quill from 'quill';
 import {Terms} from'../../../../server/src/api/v1/ terms/terms.model';
 import {TermsEditService} from './terms-edit.service';
 import {TermsViewService} from '../terms-view/terms-view.service';
-import $ from "jquery";
+import * as $ from "jquery";
 
 
 @Component({
@@ -52,10 +52,10 @@ a;
    }
    submit(form)
    {
-     var about = document.querySelector('input[name=about]');
+    //  var about = document.querySelector('input[name=about]');
     //  about = this.quill.root.innerHTML;
      // console.log(about)
-     about = $(".ql-editor").html();
+    var  about = $(".ql-editor").html();
      this.TermsEditService.terms(about);
     
    }

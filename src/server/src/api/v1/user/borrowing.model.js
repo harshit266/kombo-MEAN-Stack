@@ -19,6 +19,9 @@ const borrowing = new Schema({
     payment_date :{
         type: Array
     },
+    category :{
+        type: String
+    },
     borrowing_id :{
         type :String
     }

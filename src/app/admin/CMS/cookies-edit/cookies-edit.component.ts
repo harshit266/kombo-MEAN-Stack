@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Quill from 'quill'; 
 import {Cookies} from '../../../../server/src/api/v1/cookies/cookies.model';
-import $ from "jquery";
+import * as $ from "jquery";
 import {CookiesEditService} from './cookies-edit.service';
 import {CookiesViewService} from '../cookies-view/cookies-view.service';
 @Component({
@@ -49,10 +49,10 @@ a;
    }
    submit(form)
    {
-     var about = document.querySelector('input[name=about]');
+    //  var about = document.querySelector('input[name=about]');
     //  about = this.quill.root.innerHTML;
      // console.log(about)
-     about = $(".ql-editor").html();
+    var  about = $(".ql-editor").html();
      this.CookiesEditService.cookies(about);
     
    }

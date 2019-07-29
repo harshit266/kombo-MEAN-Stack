@@ -3,6 +3,8 @@ import {BorrowingService} from './borrowing.service';
 import {Borrowing} from '../../../../server/src/api/v1/user/borrowing.model.js'
 import { ActivatedRoute } from "@angular/router";
 import * as $ from 'jquery'
+import { Router } from '@angular/router';
+ 
 @Component({
   selector: 'app-borrowing-details',
   templateUrl: './borrowing-details.component.html',
@@ -10,7 +12,9 @@ import * as $ from 'jquery'
 })
 export class BorrowingDetailsComponent implements OnInit {
   user: Borrowing[];
-  constructor(private BorrowingService : BorrowingService ,private route: ActivatedRoute) { }
+  constructor(private BorrowingService : BorrowingService ,private route: ActivatedRoute ,
+    private router :Router
+    ) { }
   id;
   tableWidget;
   ngOnInit() {
@@ -31,5 +35,7 @@ export class BorrowingDetailsComponent implements OnInit {
       select: true
     });
   }
-
+paymentView(id){
+  this.router.navigate(['admin/payment-view',id]);
+}
 }

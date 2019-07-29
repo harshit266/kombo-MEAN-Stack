@@ -1,5 +1,6 @@
 import { Injectable, ɵConsole } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { PersistenceService } from 'angular-persistence';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class UserService {
 e;
   uri='http://localhost:4000';
   
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient , private  persistenceService: PersistenceService) { }
  
  	checkLoginCredentials(formdata) {
    const obj = {
@@ -16,6 +17,8 @@ e;
      password: formdata.password,
    };
    console.log(obj);
+  //  console.log(this.persistenceService.get('email'))
+
    return this.http.post(`${this.uri}/userLogin`, obj);
 
   }

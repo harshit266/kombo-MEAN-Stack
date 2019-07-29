@@ -31,11 +31,11 @@
 
                <img class="width-60" src="../../assets/images-user/horizontal2.png" alt="">
               <h3 class="margin-top-0">Sign-In</h3>
-              <form #form="ngForm">
+              <form #form1="ngForm">
                <input class="form-control sign-in-field border-color-black" type="email" name="username" ngModel #username="ngModel" placeholder="E-mail/Username" required />  <br>
                <input class="form-control sign-in-field border-color-black" type="password" name="password" ngModel #password="ngModel" placeholder="Password" required />
                <div class="col-sm-12 text-right padding-top-6 padding-right-0 padding-top-0 font-14" id="forgot-password-button"><a class="forgot">Forgot Password</a></div>
-                <button class="theme_button color1 wide_button padding10-30" id="signin_button" (click)="signIn(form);">Submit</button>
+                <button class="theme_button color1 wide_button padding10-30" id="signin_button" (click)="signIn(form1);">Submit</button>
              </form>
             </div>
             <div class="col-sm-4 form-group forgot-password padding-bottom-20 sign-in-form padding-top-0 font-20 background-white" id="forgot-password-email">

@@ -33,6 +33,10 @@ import {Query1Component} from './user/query1/query1.component';
 import {Query2Component} from './user/query2/query2.component';
 import {ChangePasswordComponent} from './change-password/change-password.component';
 import {MonthDateComponent} from './admin/month-date/month-date.component';
+import {PaymentViewComponent} from './admin/payment-view/payment-view.component';
+import {AfterUserLoginComponent} from './after-user-login/after-user-login.component';
+import {BorrowingPerUserComponent} from './after-user-login/borrowing-per-user/borrowing-per-user.component';
+
 const routes: Routes = [
   {path :'change-password/:id' , component:ChangePasswordComponent},
   {path :'login' , component:AdminLoginComponent},
@@ -64,7 +68,8 @@ const routes: Routes = [
        {path :'dashboard' , component:DashboardComponent},
        {path :'cms' ,component:CmsComponent},
        {path :'query', component:ViewQueryComponent},
-       {path :'month-date' , component:MonthDateComponent}
+       {path :'month-date' , component:MonthDateComponent},
+       {path : 'payment-view/:id' , component :PaymentViewComponent}
        
 
      ]
@@ -75,7 +80,12 @@ const routes: Routes = [
       {path :'query1' , component:Query2Component},
      
     ]  
-  }
+  },
+  {path : 'userLogin' , component :AfterUserLoginComponent,
+  children :[
+    {path :'borrowing' , component:BorrowingPerUserComponent}
+  ]
+}
   ];
 
 

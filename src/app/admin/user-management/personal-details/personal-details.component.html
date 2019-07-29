@@ -10,7 +10,7 @@
         <div class="col-12 col-lg-3 col-md-6">
         <h4 class="page-title">User Management</h4>
         <button routerLink="/admin/personal-details" class="btn btn-success" >Personal</button>
-        <button *ngFor="let user of user"routerLink="/admin/borrowing-details/{{user._id}}" class="btn btn-danger" >Borrowing</button>
+        <button *ngFor="let user of user"routerLink="/admin/borrowing-details/{{user.user_id}}" class="btn btn-danger" >Borrowing</button>
         <br>
         
         </div>
