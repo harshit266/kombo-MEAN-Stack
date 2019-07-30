@@ -3,7 +3,7 @@ const User= require('./user.model');
 const Borrowing = require('./borrowing.model');
 const Category = require ('../master_setting/master.model');
 const nodemailer = require('nodemailer');
-
+const query = require('../query_management/query.model');
 
 userController.login = (req, res) => {
     if (!req.body.email || !req.body.password) {
@@ -183,29 +183,95 @@ userController.addBorrowing = (req, res) => {
           
 
 }
+
 userController.viewBorrowing = (req, res) => {
 
     // console.log("first",req.params.id);
     Borrowing.findOne({borrowing_id:req.params.id}, (err, Client) => {
-    // console.log("first",req.params.id);
-        console.log(Client)
-        if (err) {
-            console.log("-- error", err)
-            return res.status(400).send(err)
-        } else {
-            // console.log("aaaaa")
-            if (Client) {
-                console.log("sddddd")
-                return res.status(200).send(Client)
+        // console.log("first",req.params.id);
+            console.log(Client)
+            if (err) {
+                console.log("-- error", err)
+                return res.status(400).send(err)
             } else {
-                console.log("ooo")
-                res.status(400).send("Doesn't exist")
+                // console.log("aaaaa")
+                if (Client) {
+                    
+                    return res.status(200).send(Client)
+                } else {
+                    console.log("ooo")
+                    res.status(400).send("Doesn't exist")
+                }
+    
             }
-
-        }
-    })
+        })
+   
 }
 
+userController.viewBorrowingUser = (req, res) => {
+
+    // console.log("first",req.params.id);
+    User.findOne({email:req.params.email}, (err, Client) => {
+        // console.log("first",req.params.id);
+            console.log(Client)
+            if (err) {
+                console.log("-- error", err)
+                return res.status(400).send(err)
+            } else {
+                // console.log("aaaaa")
+                if (Client) {
+                    Borrowing.findOne({borrowing_id:Client.user_id}, (err, Client) => {
+                        // console.log("first",req.params.id);
+                            console.log(Client)
+                            if (err) {
+                                console.log("-- error", err)
+                                return res.status(400).send(err)
+                            } else {
+                                // console.log("aaaaa")
+                                if (Client) {
+                                    console.log("sddddd")
+                                    return res.status(200).send(Client)
+                                } else {
+                                    console.log("ooo")
+                                    res.status(400).send("Doesn't exist")
+                                }
+                    
+                            }
+                        })
+                    
+                } else {
+                    console.log("ooo")
+                    res.status(400).send("Doesn't exist")
+                }
+    
+            }
+        })
+   
+}
+
+userController.viewBorrowingQuery = (req, res) => {
+
+    // console.log("first",req.params.id);
+    query.findOne({email:req.params.email}, (err, Client) => {
+        // console.log("first",req.params.id);
+            console.log(Client)
+            if (err) {
+                console.log("-- error", err)
+                return res.status(400).send(err)
+            } else {
+                // console.log("aaaaa")
+                if (Client) {
+                    
+                    return res.status(200).send(Client)
+                } else {
+                    console.log("ooo")
+                    res.status(400).send("Doesn't exist")
+                }
+    
+            }
+        })
+   
+}
    
     
 

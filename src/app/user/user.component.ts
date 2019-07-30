@@ -62,6 +62,8 @@ $('#forgot-password-email').animate({ 'left': "-700px" }, 'slow');
               // console.log(this.persistenceService.get('email'))
               console.log("Succesfully Signed In ")
               // this.Auth.setLoggedIn(true)
+              this.router.navigate([`userLogin`]);
+
             }else{
               alert(data['msg']);
             }

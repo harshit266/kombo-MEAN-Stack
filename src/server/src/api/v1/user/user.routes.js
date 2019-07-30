@@ -22,4 +22,11 @@ router.post('/addBorrowing',function(req,res){
 router.get('/viewBorrowing/:id',function(req,res){
     userController.viewBorrowing(req,res)
 })
+router.get('/viewBorrowingPerUserDetails/:email',function(req,res){
+    userController.viewBorrowingUser(req,res)
+})
+router.get('/viewBorrowingPerUserDetailsQuery/:email',function(req,res){
+    userController.viewBorrowingQuery(req,res)
+})
+
 module.exports = router;
